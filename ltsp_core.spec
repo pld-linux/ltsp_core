@@ -47,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/lts.conf
 %{_ltspdir}/bin/
 %{_ltspdir}/dev/
-%attr(600,root,root)%{_ltspdir}/etc/
+%{_ltspdir}/etc/
 %{_ltspdir}/lib/
 %{_ltspdir}/mnt
 %{_ltspdir}/oldroot/

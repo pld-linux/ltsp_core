@@ -31,11 +31,12 @@ A: Convert those old PCs into X terminals with LTSP
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_ltspdir}/
+install -d $RPM_BUILD_ROOT{%{_ltspdir},%{_sysconfdir}}
 cd i386
 cp -r {bin,dev,etc,lib,oldroot,opt,proc,root,sbin,tmp,usr} $RPM_BUILD_ROOT%{_ltspdir}/
 ln -sf /tmp/var $RPM_BUILD_ROOT%{_ltspdir}/var
 ln -sf /tmp/mnt $RPM_BUILD_ROOT%{_ltspdir}/mnt 
+ln -sf %{_ltspdir}/etc/lts.conf $RPM_BUILD_ROOT%{_sysconfdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -43,7 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(700,root,root,700)
 %doc README
-
+%{_sysconfdir}/lts.conf
 %{_ltspdir}/bin/
 %{_ltspdir}/dev/
 %attr(600,root,root)%{_ltspdir}/etc/

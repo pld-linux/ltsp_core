@@ -6,12 +6,12 @@
 Summary:	Linux Terminal Server Project - Core system for terminals
 Summary(pl):	Podstawowy system dla terminali z Linux Terminal Server Project
 Name:		ltsp_core
-Version:	3.0.7
+Version:	3.0.9
 Release:	0.1
 License:	GPL
 Group:		Applications/Network
+# Source0-md5:	4838e28c19a475e8cdd8d0b731b22264
 Source0:	http://dl.sourceforge.net/ltsp/%{name}-%{version}-i386.tgz
-# Source0-md5:	a890d19de7a182ab53e02faa056d7649
 URL:		http://www.ltsp.org/
 AutoProv:	0
 AutoReq:	0

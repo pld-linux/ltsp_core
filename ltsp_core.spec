@@ -42,28 +42,28 @@ ln -sf %{_ltspdir}/etc/lts.conf $RPM_BUILD_ROOT%{_sysconfdir}
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(700,root,root,700)
+%defattr(755,root,root,755)
 %doc README
 %{_sysconfdir}/lts.conf
 %{_ltspdir}/bin/
 %{_ltspdir}/dev/
-%attr(600,root,root)%{_ltspdir}/etc/*.conf
+%attr(644,root,root)%{_ltspdir}/etc/*.conf
 %{_ltspdir}/etc/rc*
 %{_ltspdir}/etc/dhclient-script
-%attr(600,root,root)%{_ltspdir}/etc/bashrc
-%attr(600,root,root)%{_ltspdir}/etc/fstab
-%attr(600,root,root)%{_ltspdir}/etc/group
-%attr(600,root,root)%{_ltspdir}/etc/inittab
-%attr(600,root,root)%{_ltspdir}/etc/ld.so.cache
-%attr(600,root,root)%{_ltspdir}/etc/lts.orig
-%attr(600,root,root)%{_ltspdir}/etc/lts.conf.readme
-%attr(600,root,root)%{_ltspdir}/etc/ltsp_functions
-%attr(600,root,root)%{_ltspdir}/etc/modules.devfs
-%attr(600,root,root)%{_ltspdir}/etc/passwd
-%attr(600,root,root)%{_ltspdir}/etc/protocols
-%attr(600,root,root)%{_ltspdir}/etc/rpc
-%attr(600,root,root)%{_ltspdir}/etc/services
-%attr(600,root,root)%{_ltspdir}/etc/version
+%attr(644,root,root)%{_ltspdir}/etc/bashrc
+%attr(644,root,root)%{_ltspdir}/etc/fstab
+%attr(644,root,root)%{_ltspdir}/etc/group
+%attr(644,root,root)%{_ltspdir}/etc/inittab
+%attr(644,root,root)%{_ltspdir}/etc/ld.so.cache
+%attr(644,root,root)%{_ltspdir}/etc/lts.orig
+%attr(644,root,root)%{_ltspdir}/etc/lts.conf.readme
+%attr(644,root,root)%{_ltspdir}/etc/ltsp_functions
+%attr(644,root,root)%{_ltspdir}/etc/modules.devfs
+%attr(644,root,root)%{_ltspdir}/etc/passwd
+%attr(644,root,root)%{_ltspdir}/etc/protocols
+%attr(644,root,root)%{_ltspdir}/etc/rpc
+%attr(644,root,root)%{_ltspdir}/etc/services
+%attr(644,root,root)%{_ltspdir}/etc/version
 %{_ltspdir}/lib/
 %{_ltspdir}/mnt
 %{_ltspdir}/oldroot/

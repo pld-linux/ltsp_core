@@ -42,7 +42,7 @@ install -d $RPM_BUILD_ROOT{%{_ltspdir},%{_sysconfdir}}
 cd i386
 cp -r {bin,dev,etc,lib,oldroot,opt,proc,root,sbin,tmp,usr} $RPM_BUILD_ROOT%{_ltspdir}
 ln -sf /tmp/var $RPM_BUILD_ROOT%{_ltspdir}/var
-ln -sf /tmp/mnt $RPM_BUILD_ROOT%{_ltspdir}/mnt 
+ln -sf /tmp/mnt $RPM_BUILD_ROOT%{_ltspdir}/mnt
 ln -sf %{_ltspdir}/etc/lts.conf $RPM_BUILD_ROOT%{_sysconfdir}
 
 %clean

@@ -8,8 +8,9 @@ Version:	4.0.1
 Release:	0.1
 License:	GPL
 Group:		Applications/Networking
-Source0:	http://www.sardzent.org/ltsp/ltsp_core-4.0.1.tgz
-# Source0-md5:	0ef1bdedce7ffeff46edc187473594ce
+Source0:	http://www.ltsp.org/ltsp-utils-0.11.tgz
+#Source0:	http://www.sardzent.org/ltsp/ltsp_core-4.0.1.tgz
+# Source0-md5:	b17b350b18b04d769fcadcd12885a573
 Source1:	http://ltsp.mirrors.tds.net/pub/ltsp/ltsp-%{_pver}/ltsp-audiofile-1.1-0-%{_arch}.tgz
 # Source1-md5:	1931c46b3648e01cfe92c8dcec40b41c
 Source2:	http://ltsp.mirrors.tds.net/pub/ltsp/ltsp-%{_pver}/ltsp-aumix-1.1-0-%{_arch}.tgz
@@ -130,11 +131,11 @@ Dokumentacja dla LTSP (plik pdf).
 
 
 %prep
-%setup -q -n %{name}
+%setup -q -n ltsp-utils
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_ltspdir},%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT{%{_ltspdir},%{_sysconfdir},/bin}
 
 tar zxf %{SOURCE1}
 tar zxf %{SOURCE2}
@@ -176,6 +177,7 @@ tar zxf %{SOURCE37}
 tar zxf %{SOURCE38}
 tar zxf %{SOURCE39}
 
+install ltspadmin ltspcfg ltspinfo $RPM_BUILD_ROOT/bin
 cd i386
 cp -r {bin,dev,etc,home,include,lib,libexec,oldroot,proc,root,sbin,share,tmp,usr} $RPM_BUILD_ROOT%{_ltspdir}
 install etc/lts.conf.readme $RPM_BUILD_ROOT%{_sysconfdir}/lts.conf
@@ -190,8 +192,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%doc README
+%doc COPYING
 %config(noreplace) %{_sysconfdir}/lts.conf
+%dir /bin
+%attr(755,root,root) /bin/*
 %dir %{_ltspdir}
 %attr(755,root,root) %{_ltspdir}/bin
 # XXX: fix perms inside!!!

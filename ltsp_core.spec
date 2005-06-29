@@ -9,7 +9,6 @@ Release:	0.1
 License:	GPL
 Group:		Applications/Networking
 Source0:	http://www.ltsp.org/ltsp-utils-0.11.tgz
-#Source0:	http://www.sardzent.org/ltsp/ltsp_core-4.0.1.tgz
 # Source0-md5:	b17b350b18b04d769fcadcd12885a573
 Source1:	http://ltsp.mirrors.tds.net/pub/ltsp/ltsp-%{_pver}/ltsp-audiofile-1.1-0-%{_arch}.tgz
 # Source1-md5:	1931c46b3648e01cfe92c8dcec40b41c
@@ -100,7 +99,6 @@ AutoReq:	0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_ltspdir	/home/services/ltsp
-#%define		no_install_post_strip	1
 
 %description
 LTSP is an add-on package for Linux that allows you to connect lots of
@@ -198,7 +196,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) /bin/*
 %dir %{_ltspdir}
 %attr(755,root,root) %{_ltspdir}/bin
-# XXX: fix perms inside!!!
 %dir %{_ltspdir}/dev
 %dir %{_ltspdir}/etc
 %config(noreplace) %{_ltspdir}/etc/*.conf
@@ -210,12 +207,16 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_ltspdir}/etc/run_ltspinfod
 %attr(755,root,root) %{_ltspdir}/etc/screen_session
 %attr(755,root,root) %{_ltspdir}/etc/build_x*_cfg
-%{_ltspdir}/etc/*
+%{_ltspdir}/etc
 %dir %{_ltspdir}/home
 %{_ltspdir}/include
 %dir %{_ltspdir}/lib
-%attr(755,root,root) %{_ltspdir}/lib
-%{_ltspdir}/libexec
+%attr(755,root,root) %{_ltspdir}/lib/evms
+%attr(755,root,root) %{_ltspdir}/lib/security
+%{_ltspdir}/lib/pkgconfig
+%{_ltspdir}/lib/*
+%dir %{_ltspdir}/libexec
+%attr(755,root,root) %{_ltspdir}/libexec
 #%{_ltspdir}/mnt
 %{_ltspdir}/oldroot
 %{_ltspdir}/proc
@@ -223,7 +224,21 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_ltspdir}/sbin
 %{_ltspdir}/share
 %{_ltspdir}/tmp
-%{_ltspdir}/usr
+%dir %{_ltspdir}/usr
+%attr(755,root,root) %{_ltspdir}/usr/X11R6/bin
+%attr(755,root,root) %{_ltspdir}/usr/X11R6/lib/libaudio.so.2.3
+%{_ltspdir}/usr/X11R6/lib/*
+%attr(755,root,root) %{_ltspdir}/usr/bin
+%{_ltspdir}/usr/include
+%attr(755,root,root) %{_ltspdir}/usr/lib/gconv
+%{_ltspdir}/usr/lib/pkgconfig
+%{_ltspdir}/usr/lib/terminfo
+%{_ltspdir}/usr/lib/l*
+%{_ltspdir}/usr/libexec
+%{_ltspdir}/usr/man
+%attr(755,root,root) %{_ltspdir}/usr/sbin
+%{_ltspdir}/usr/share
+%{_ltspdir}/usr/ssl
 
 %files doc
 %defattr(644,root,root,755)

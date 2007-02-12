@@ -3,7 +3,7 @@
 %define		_pver	4.1
 
 Summary:	Linux Terminal Server Project - Core system for terminals
-Summary(pl):	Podstawowy system dla terminali z Linux Terminal Server Project
+Summary(pl.UTF-8):   Podstawowy system dla terminali z Linux Terminal Server Project
 Name:		ltsp_core
 Version:	4.0.1
 Release:	0.1
@@ -110,25 +110,25 @@ can be installed on any Linux system.
 
 This package contains core system for LTSP terminals.
 
-%description -l pl
-LTSP to dodatkowy pakiet dla Linuksa pozwalaj±cy na pod³±czenie wielu
-cienkich klientów jako terminali do serwera linuksowego. Aplikacje
-zwykle dzia³aj± na serwerze i przyjmuj± wej¶cie oraz wy¶wietlaj±
-wyj¶cie na wy¶wietlaczach cienkich klientów. LTSP jest dostêpny jako
-zestaw pakietów, które mo¿na zainstalowaæ na dowolnym systemie
+%description -l pl.UTF-8
+LTSP to dodatkowy pakiet dla Linuksa pozwalajÄ…cy na podÅ‚Ä…czenie wielu
+cienkich klientÃ³w jako terminali do serwera linuksowego. Aplikacje
+zwykle dziaÅ‚ajÄ… na serwerze i przyjmujÄ… wejÅ›cie oraz wyÅ›wietlajÄ…
+wyjÅ›cie na wyÅ›wietlaczach cienkich klientÃ³w. LTSP jest dostÄ™pny jako
+zestaw pakietÃ³w, ktÃ³re moÅ¼na zainstalowaÄ‡ na dowolnym systemie
 linuksowym.
 
 Ten pakiet zawiera podstawowy system dla terminali LTSP.
 
 %package doc
 Summary:	Documentation for LTSP
-Summary(pl):	Dokumentacja dla LTSP
+Summary(pl.UTF-8):   Dokumentacja dla LTSP
 Group:		Documentation
 
 %description doc
 Documentation for LTSP (PDF file).
 
-%description doc -l pl
+%description doc -l pl.UTF-8
 Dokumentacja dla LTSP (plik PDF).
 
 %prep

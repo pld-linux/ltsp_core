@@ -3,7 +3,7 @@
 %define		_pver	4.1
 
 Summary:	Linux Terminal Server Project - Core system for terminals
-Summary(pl.UTF-8):   Podstawowy system dla terminali z Linux Terminal Server Project
+Summary(pl.UTF-8):	Podstawowy system dla terminali z Linux Terminal Server Project
 Name:		ltsp_core
 Version:	4.0.1
 Release:	0.1
@@ -122,7 +122,7 @@ Ten pakiet zawiera podstawowy system dla terminali LTSP.
 
 %package doc
 Summary:	Documentation for LTSP
-Summary(pl.UTF-8):   Dokumentacja dla LTSP
+Summary(pl.UTF-8):	Dokumentacja dla LTSP
 Group:		Documentation
 
 %description doc
